@@ -101,7 +101,7 @@ document.querySelectorAll('.gallery-item').forEach((item, index) => {
 // ========================================
 
 // Replace this URL with your Google Apps Script web app URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZv-H6JObs-0OmketKTgjOP1au0niADbiEkV0GpDDV5aTwxlK9cD6n7QGcMNCf2J3uMA/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwtNG5ySs5LOtVVYlY0qtE841wF3To9f2bWWT4X0CDG0r9GXMWxpGj-uAj-Al5AoaoRTw/exec';
 
 const enquiryForm = document.getElementById('enquiry-form');
 const submitButton = enquiryForm.querySelector('button[type="submit"]');
