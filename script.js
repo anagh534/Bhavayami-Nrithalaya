@@ -222,6 +222,10 @@ document.querySelectorAll('.class-card').forEach(card => {
 // ========================================
 document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', function() {
+        // Get the image source
+        const img = this.querySelector('img');
+        if (!img) return;
+        
         // Create lightbox overlay
         const lightbox = document.createElement('div');
         lightbox.style.cssText = `
@@ -230,33 +234,93 @@ document.querySelectorAll('.gallery-item').forEach(item => {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10000;
             cursor: pointer;
             animation: fadeIn 0.3s ease;
+            padding: 20px;
         `;
         
-        const content = document.createElement('div');
-        content.style.cssText = `
+        // Create close button
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.style.cssText = `
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: transparent;
+            border: none;
             color: white;
-            font-size: 2rem;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            padding: 40px;
+            font-size: 50px;
+            cursor: pointer;
+            z-index: 10001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
         `;
-        content.textContent = 'Image Gallery Coming Soon';
         
-        lightbox.appendChild(content);
+        closeBtn.addEventListener('mouseenter', () => {
+            closeBtn.style.transform = 'scale(1.2)';
+        });
+        
+        closeBtn.addEventListener('mouseleave', () => {
+            closeBtn.style.transform = 'scale(1)';
+        });
+        
+        // Create enlarged image
+        const enlargedImg = document.createElement('img');
+        enlargedImg.src = img.src;
+        enlargedImg.alt = img.alt;
+        enlargedImg.style.cssText = `
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        `;
+        
+        // Prevent image click from closing lightbox
+        enlargedImg.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        lightbox.appendChild(closeBtn);
+        lightbox.appendChild(enlargedImg);
         document.body.appendChild(lightbox);
         
-        // Close on click
-        lightbox.addEventListener('click', () => {
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+        
+        // Function to close lightbox
+        const closeLightbox = () => {
             lightbox.style.animation = 'fadeIn 0.3s ease reverse';
+            document.body.style.overflow = '';
             setTimeout(() => lightbox.remove(), 300);
+        };
+        
+        // Close on background click
+        lightbox.addEventListener('click', closeLightbox);
+        
+        // Close on button click
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
         });
+        
+        // Close on Escape key
+        const escHandler = (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                document.removeEventListener('keydown', escHandler);
+            }
+        };
+        document.addEventListener('keydown', escHandler);
     });
 });
 
