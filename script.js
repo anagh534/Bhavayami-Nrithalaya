@@ -99,26 +99,99 @@ document.querySelectorAll('.gallery-item').forEach((item, index) => {
 // ========================================
 // FORM HANDLING
 // ========================================
-const enquiryForm = document.getElementById('enquiry-form');
 
-enquiryForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+// Replace this URL with your Google Apps Script web app URL
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZv-H6JObs-0OmketKTgjOP1au0niADbiEkV0GpDDV5aTwxlK9cD6n7QGcMNCf2J3uMA/exec';
+
+const enquiryForm = document.getElementById('enquiry-form');
+const submitButton = enquiryForm.querySelector('button[type="submit"]');
+
+// Input sanitization function
+function sanitizeInput(input) {
+    const div = document.createElement('div');
+    div.textContent = input;
+    return div.innerHTML.trim();
+}
+
+// Validation functions
+function validateName(name) {
+    const sanitized = sanitizeInput(name);
+    if (sanitized.length < 2 || sanitized.length > 50) {
+        return { valid: false, message: 'Name must be between 2 and 50 characters' };
+    }
+    if (!/^[a-zA-Z\s.'-]+$/.test(sanitized)) {
+        return { valid: false, message: 'Name contains invalid characters' };
+    }
+    return { valid: true, value: sanitized };
+}
+
+function validateEmail(email) {
+    const sanitized = sanitizeInput(email);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(sanitized)) {
+        return { valid: false, message: 'Please enter a valid email address' };
+    }
+    if (sanitized.length > 100) {
+        return { valid: false, message: 'Email is too long' };
+    }
+    return { valid: true, value: sanitized.toLowerCase() };
+}
+
+function validatePhone(phone) {
+    const sanitized = sanitizeInput(phone);
+    // Remove spaces, dashes, and parentheses
+    const cleaned = sanitized.replace(/[\s\-()]/g, '');
     
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        danceType: document.getElementById('dance-type').value,
-        message: document.getElementById('message').value
-    };
+    // Check for valid Indian phone number (10 digits)
+    if (!/^[6-9]\d{9}$/.test(cleaned)) {
+        return { valid: false, message: 'Please enter a valid 10-digit Indian phone number' };
+    }
+    return { valid: true, value: cleaned };
+}
+
+function validateMessage(message) {
+    const sanitized = sanitizeInput(message);
+    if (sanitized.length < 5) {
+        return { valid: false, message: 'Message must be at least 5 characters long' };
+    }
+    if (sanitized.length > 1000) {
+        return { valid: false, message: 'Message is too long (max 1000 characters)' };
+    }
+    return { valid: true, value: sanitized };
+}
+
+// Show error message
+function showError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.style.cssText = `
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+        color: white;
+        padding: 20px 40px;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(244, 67, 54, 0.4);
+        z-index: 10000;
+        font-weight: 600;
+        animation: slideDown 0.5s ease;
+        max-width: 80%;
+        text-align: center;
+    `;
+    errorDiv.textContent = '✗ ' + message;
+    document.body.appendChild(errorDiv);
     
-    // Here you would typically send this data to a server
-    // For now, we'll just show a success message
-    
-    // Create success message
-    const successMessage = document.createElement('div');
-    successMessage.style.cssText = `
+    setTimeout(() => {
+        errorDiv.style.animation = 'slideDown 0.5s ease reverse';
+        setTimeout(() => errorDiv.remove(), 500);
+    }, 4000);
+}
+
+// Show success message
+function showSuccess(message) {
+    const successDiv = document.createElement('div');
+    successDiv.style.cssText = `
         position: fixed;
         top: 100px;
         left: 50%;
@@ -132,7 +205,7 @@ enquiryForm.addEventListener('submit', (e) => {
         font-weight: 600;
         animation: slideDown 0.5s ease;
     `;
-    successMessage.textContent = '✓ Thank you! We will contact you soon.';
+    successDiv.textContent = '✓ ' + message;
     
     // Add animation
     const style = document.createElement('style');
@@ -148,23 +221,100 @@ enquiryForm.addEventListener('submit', (e) => {
             }
         }
     `;
-    document.head.appendChild(style);
+    if (!document.querySelector('style[data-form-animations]')) {
+        style.setAttribute('data-form-animations', 'true');
+        document.head.appendChild(style);
+    }
     
-    document.body.appendChild(successMessage);
+    document.body.appendChild(successDiv);
     
-    // Remove message after 5 seconds
     setTimeout(() => {
-        successMessage.style.animation = 'slideDown 0.5s ease reverse';
-        setTimeout(() => {
-            successMessage.remove();
-        }, 500);
+        successDiv.style.animation = 'slideDown 0.5s ease reverse';
+        setTimeout(() => successDiv.remove(), 500);
     }, 5000);
+}
+
+// Form submission handler
+enquiryForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
     
-    // Reset form
-    enquiryForm.reset();
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const danceType = document.getElementById('dance-type').value;
+    const message = document.getElementById('message').value;
     
-    // Log form data (for demonstration)
-    console.log('Form submitted:', formData);
+    // Validate all inputs
+    const nameValidation = validateName(name);
+    if (!nameValidation.valid) {
+        showError(nameValidation.message);
+        return;
+    }
+    
+    const emailValidation = validateEmail(email);
+    if (!emailValidation.valid) {
+        showError(emailValidation.message);
+        return;
+    }
+    
+    const phoneValidation = validatePhone(phone);
+    if (!phoneValidation.valid) {
+        showError(phoneValidation.message);
+        return;
+    }
+    
+    if (!danceType) {
+        showError('Please select a dance form');
+        return;
+    }
+    
+    const messageValidation = validateMessage(message);
+    if (!messageValidation.valid) {
+        showError(messageValidation.message);
+        return;
+    }
+    
+    // Prepare sanitized data
+    const formData = {
+        name: nameValidation.value,
+        email: emailValidation.value,
+        phone: phoneValidation.value,
+        danceType: danceType,
+        message: messageValidation.value,
+        timestamp: new Date().toISOString()
+    };
+    
+    // Disable submit button and show loading state
+    submitButton.disabled = true;
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    
+    try {
+        // Send data to Google Sheets
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        // Show success message
+        showSuccess('Thank you! We will contact you soon.');
+        
+        // Reset form
+        enquiryForm.reset();
+        
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        showError('Something went wrong. Please try again or call us directly.');
+    } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+    }
 });
 
 // ========================================
