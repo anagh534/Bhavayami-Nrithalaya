@@ -454,6 +454,14 @@ body {
     overflow: hidden;
 }
 
+.class-image .image-fit-top{
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 .class-image img {
     width: 100%;
     height: 100%;
