@@ -597,4 +597,131 @@ scrollTopBtn.addEventListener('mouseleave', () => {
     scrollTopBtn.style.transform = 'scale(1) translateY(0)';
 });
 
+// ========================================
+// LIGHTBOX GALLERY FUNCTIONALITY
+// ========================================
+
+// Gallery images array
+const galleryImages = [
+    { src: 'assets/1.jpeg', caption: 'Dance Performance 1' },
+    { src: 'assets/2.jpeg', caption: 'Dance Performance 2' },
+    { src: 'assets/3.jpeg', caption: 'Dance Performance 3' },
+    { src: 'assets/4.jpeg', caption: 'Dance Performance 4' },
+    { src: 'assets/5.jpeg', caption: 'Dance Performance 5' },
+    { src: 'assets/6.jpeg', caption: 'Dance Performance 6' },
+    { src: 'assets/7.jpeg', caption: 'Dance Performance 7' },
+    { src: 'assets/8.jpeg', caption: 'Dance Performance 8' },
+    { src: 'assets/9.jpeg', caption: 'Dance Performance 9' },
+    { src: 'assets/10.jpeg', caption: 'Dance Performance 10' },
+    { src: 'assets/11.jpeg', caption: 'Dance Performance 11' },
+    { src: 'assets/12.jpeg', caption: 'Dance Performance 12' },
+    { src: 'assets/13.jpeg', caption: 'Dance Performance 13' },
+    { src: 'assets/14.jpeg', caption: 'Dance Performance 14' },
+    { src: 'assets/15.jpeg', caption: 'Dance Performance 15' },
+    { src: 'assets/16.jpeg', caption: 'Dance Performance 16' },
+    { src: 'assets/17.jpeg', caption: 'Dance Performance 17' },
+    { src: 'assets/18.jpeg', caption: 'Dance Performance 18' },
+    { src: 'assets/19.jpeg', caption: 'Dance Performance 19' },
+    { src: 'assets/20.jpeg', caption: 'Dance Performance 20' },
+    { src: 'assets/21.jpeg', caption: 'Dance Performance 21' }
+];
+
+let currentImageIndex = 0;
+
+// Update counter display
+function updateCounter() {
+    const counter = document.getElementById('lightbox-counter');
+    if (counter) {
+        counter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+    }
+}
+
+// Open lightbox
+function openLightbox(index) {
+    currentImageIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    
+    lightbox.style.display = 'block';
+    lightboxImg.src = galleryImages[index].src;
+    lightboxCaption.textContent = galleryImages[index].caption;
+    updateCounter();
+    
+    // Prevent body scrolling when lightbox is open
+    document.body.style.overflow = 'hidden';
+}
+
+// Close lightbox
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    
+    // Re-enable body scrolling
+    document.body.style.overflow = 'auto';
+}
+
+// Download current image
+function downloadImage() {
+    const currentImage = galleryImages[currentImageIndex];
+    const link = document.createElement('a');
+    link.href = currentImage.src;
+    link.download = `bhavayami-nrithalaya-${currentImageIndex + 1}.jpeg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Change image in lightbox
+function changeImage(direction) {
+    currentImageIndex += direction;
+    
+    // Loop around if at the beginning or end
+    if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+    }
+    
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    
+    // Add fade effect
+    lightboxImg.style.opacity = '0';
+    
+    setTimeout(() => {
+        lightboxImg.src = galleryImages[currentImageIndex].src;
+        lightboxCaption.textContent = galleryImages[currentImageIndex].caption;
+        lightboxImg.style.opacity = '1';
+        updateCounter();
+    }, 200);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display === 'block') {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            changeImage(-1);
+        } else if (e.key === 'ArrowRight') {
+            changeImage(1);
+        }
+    }
+});
+
+// Close lightbox when clicking outside the image
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+});
+
 console.log('✨ Bhavayami Nrithalaya website loaded successfully!');
+
