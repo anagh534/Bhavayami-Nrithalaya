@@ -565,6 +565,10 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.gallery-item-hidden {
+    display: none;
+}
+
 .gallery-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(212, 20, 90, 0.3);
@@ -832,6 +836,49 @@ body {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
     font-family: var(--font-body);
+}
+
+/* Gallery Toggle Button */
+.gallery-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.gallery-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 35px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 20, 90, 0.3);
+}
+
+.gallery-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(212, 20, 90, 0.4);
+}
+
+.gallery-toggle-btn:active {
+    transform: translateY(0);
+}
+
+.toggle-arrow {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-toggle-btn.active .toggle-arrow {
+    transform: rotate(180deg);
 }
 
 /* ========================================

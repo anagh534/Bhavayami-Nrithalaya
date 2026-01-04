@@ -712,5 +712,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ========================================
+// GALLERY TOGGLE FUNCTIONALITY
+// ========================================
+const galleryToggleBtn = document.getElementById('gallery-toggle-btn');
+const hiddenItems = document.querySelectorAll('.gallery-item-hidden');
+
+if (galleryToggleBtn) {
+    galleryToggleBtn.addEventListener('click', () => {
+        const isExpanded = galleryToggleBtn.classList.contains('active');
+        
+        hiddenItems.forEach((item, index) => {
+            if (isExpanded) {
+                // Hide items with a staggered animation
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, index * 50);
+            } else {
+                // Show items with a staggered animation
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, index * 50);
+            }
+        });
+        
+        // Toggle button state
+        galleryToggleBtn.classList.toggle('active');
+        
+        // Update button text
+        const toggleText = galleryToggleBtn.querySelector('.toggle-text');
+        if (isExpanded) {
+            toggleText.textContent = 'Show More';
+        } else {
+            toggleText.textContent = 'Show Less';
+        }
+    });
+}
+
 console.log('✨ Bhavayami Nrithalaya website loaded successfully!');
 
