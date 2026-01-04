@@ -661,17 +661,6 @@ function closeLightbox() {
     document.body.style.overflow = 'auto';
 }
 
-// Download current image
-function downloadImage() {
-    const currentImage = galleryImages[currentImageIndex];
-    const link = document.createElement('a');
-    link.href = currentImage.src;
-    link.download = `bhavayami-nrithalaya-${currentImageIndex + 1}.jpeg`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
 // Change image in lightbox
 function changeImage(direction) {
     currentImageIndex += direction;
