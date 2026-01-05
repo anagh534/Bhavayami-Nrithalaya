@@ -1,0 +1,20 @@
+# robots.txt for Bhavayami Nrithalaya Dance Website
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bhavayami-nrithalaya.vercel.app/sitemap.xml
+
+# Crawl delay (optional, polite to servers)
+Crawl-delay: 1
+
+# Block specific areas if needed (uncomment if you have these directories)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+
+# Allow search engines to access CSS and JavaScript
+Allow: /styles.css
+Allow: /script.js
+Allow: /assets/
