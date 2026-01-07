@@ -1278,6 +1278,337 @@ body {
 }
 
 /* ========================================
+   SERVICE PAGES - BREADCRUMB & LAYOUT
+======================================== */
+.breadcrumb {
+    background: var(--light-bg);
+    padding: 20px 0;
+    margin-top: 70px;
+    border-bottom: 2px solid rgba(212, 20, 90, 0.1);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb a::before {
+    content: '← ';
+    margin-right: 8px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--dark-purple);
+    transform: translateX(-5px);
+}
+
+.breadcrumb a:hover::before {
+    transform: translateX(-5px);
+}
+
+/* Service Page Layout */
+.service-page {
+    min-height: 100vh;
+}
+
+/* Service Headers - Different themed backgrounds */
+.service-header {
+    position: relative;
+    padding: 120px 0 80px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+}
+
+.service-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+}
+
+.service-header h1 {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-header p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.3rem;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* Themed Headers for Different Dance Forms */
+.folk-hero {
+    background: linear-gradient(135deg, #FBB03B 0%, #D4145A 50%, #8B2F97 100%);
+}
+
+.semi-classical-hero {
+    background: linear-gradient(135deg, #8B2F97 0%, #D4145A 50%, #FBB03B 100%);
+}
+
+.nrithyayoga-hero {
+    background: linear-gradient(135deg, #4A1942 0%, #8B2F97 50%, #D4AF37 100%);
+}
+
+.competition-hero {
+    background: linear-gradient(135deg, #D4145A 0%, #8B2F97 50%, #4A1942 100%);
+}
+
+/* Service Content Section */
+.service-content {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.service-text {
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+.service-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--dark-purple);
+    margin-top: 50px;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.service-text h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.service-text h2:first-of-type {
+    margin-top: 0;
+}
+
+.service-text h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.service-text h4 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.service-text p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.service-text ul,
+.service-text ol {
+    margin-bottom: 25px;
+    padding-left: 25px;
+}
+
+.service-text ul li,
+.service-text ol li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+    font-size: 1.02rem;
+}
+
+.service-text ul li strong,
+.service-text ol li strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.service-text blockquote {
+    background: var(--light-bg);
+    padding: 25px 30px;
+    margin: 30px 0;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    font-style: italic;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.service-text table {
+    width: 100%;
+    margin: 30px 0;
+    border-collapse: collapse;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.service-text table thead {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.service-text table thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border: none;
+}
+
+.service-text table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.3s ease;
+}
+
+.service-text table tbody tr:hover {
+    background: var(--light-bg);
+}
+
+.service-text table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.service-text table td {
+    padding: 12px 15px;
+}
+
+/* Service Grid (for features, benefits, etc.) */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.service-card {
+    background: var(--light-bg);
+    padding: 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(212, 20, 90, 0.15);
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* Responsive for Service Pages */
+@media (max-width: 768px) {
+    .service-header h1 {
+        font-size: 2rem;
+    }
+    
+    .service-header p {
+        font-size: 1.1rem;
+    }
+    
+    .service-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-text h3 {
+        font-size: 1.4rem;
+    }
+    
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .breadcrumb {
+        margin-top: 60px;
+    }
+    
+    .service-content {
+        padding: 50px 0;
+    }
+    
+    .service-text table {
+        font-size: 0.9rem;
+    }
+    
+    .service-text table thead th,
+    .service-text table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-header {
+        padding: 100px 0 60px;
+    }
+    
+    .service-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .service-header p {
+        font-size: 1rem;
+    }
+    
+    .service-text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .service-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .service-text {
+        font-size: 0.95rem;
+    }
+    
+    .service-text blockquote {
+        padding: 15px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ========================================
    ACCESSIBILITY
 ======================================== */
 @media (prefers-reduced-motion: reduce) {
