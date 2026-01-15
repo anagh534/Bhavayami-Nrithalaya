@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://bhavayami-nrithalaya.vercel.app/sitemap.xml
+Sitemap: https://www.bhavayami-nrithalaya.in/sitemap.xml
 
 # Crawl delay (optional, polite to servers)
 Crawl-delay: 1
