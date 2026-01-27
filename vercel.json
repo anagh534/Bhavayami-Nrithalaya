@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bhavayami-nrithalaya.vercel.app"
+        }
+      ],
+      "destination": "https://www.bhavayami-nrithalaya.in/:path*",
+      "permanent": true
+    }
+  ]
+}
