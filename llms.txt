@@ -1,0 +1,39 @@
+# Bhavayami Nrithalaya
+
+> Trusted dance academy at Lenin Balavadi, Vazhuthacaud, Trivandrum (Thiruvananthapuram), Kerala, India. Offering Bharatanatyam, Semi-Classical, Folk, Thiruvathira, Nrithyayoga, and competition coaching for children and students.
+
+## About
+
+Bhavayami Nrithalaya is a dance school located at Lenin Balavadi, Vazhuthacaud, Thiruvananthapuram, Kerala 695010, India. The academy offers classical and folk dance education for children aged 5 and above, with both weekend and after-school batches. The school serves families from Vazhuthacaud, Sasthamangalam, Kawdiar, Kowdiar, Pattom, Medical College, and surrounding areas in Trivandrum.
+
+## Dance Programs
+
+- [Bharatanatyam Classes for Kids](https://www.bhavayami-nrithalaya.in/#bharatanatyam): Classical dance training with traditional techniques, Arangetram preparation, theory and practical sessions.
+- [Semi-Classical Dance](https://www.bhavayami-nrithalaya.in/#semi-classical): Fusion of classical and contemporary styles for school programs and stage performances.
+- [Kerala Folk Dance](https://www.bhavayami-nrithalaya.in/#folk-dance): Traditional Kerala folk dances for Onam celebrations, cultural programs, and group performances.
+- [Thiruvathira Classes](https://www.bhavayami-nrithalaya.in/#thiruvathira): Kerala's beloved circular group dance with traditional songs for festivals.
+- [Nrithyayoga](https://www.bhavayami-nrithalaya.in/#nrithyayoga): Unique fusion of yoga and dance promoting fitness, flexibility, and wellness.
+- [Competition Coaching](https://www.bhavayami-nrithalaya.in/#competition): Kalolsavam and inter-school competition preparation with custom choreography.
+
+## Key Information
+
+- **Location**: Lenin Balavadi, Vazhuthacaud, Thiruvananthapuram, Kerala 695010
+- **Coordinates**: 8.5241°N, 76.9366°E
+- **Age Group**: Children aged 5+, teens, and adults
+- **Schedule**: Weekend classes (Saturday & Sunday), after-school batches (Tuesday & Thursday)
+- **Website**: https://www.bhavayami-nrithalaya.in/
+- **Contact**: Available via contact form on the website
+
+## Pages
+
+- [Home](https://www.bhavayami-nrithalaya.in/): Main landing page with overview
+- [About](https://www.bhavayami-nrithalaya.in/#about): About the academy
+- [Classes](https://www.bhavayami-nrithalaya.in/#classes): All dance programs offered
+- [Gallery](https://www.bhavayami-nrithalaya.in/#gallery): Performance photos
+- [Why Choose Us](https://www.bhavayami-nrithalaya.in/#why-choose-us): Key benefits and differentiators
+- [FAQ](https://www.bhavayami-nrithalaya.in/#faq): Frequently asked questions
+- [Contact](https://www.bhavayami-nrithalaya.in/#contact): Enquiry form and location details
+
+## Optional
+
+- [Full Details](https://www.bhavayami-nrithalaya.in/llms-full.txt): Extended information for LLMs

@@ -6,6 +6,11 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.bhavayami-nrithalaya.in/sitemap.xml
 
+# LLM-readable files
+# See https://llmstxt.org/ for specification
+# llms.txt: https://www.bhavayami-nrithalaya.in/llms.txt
+# llms-full.txt: https://www.bhavayami-nrithalaya.in/llms-full.txt
+
 # Crawl delay (optional, polite to servers)
 Crawl-delay: 1
 
@@ -18,3 +23,35 @@ Crawl-delay: 1
 Allow: /styles.css
 Allow: /script.js
 Allow: /assets/
+
+# Allow LLM crawlers specifically
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Claude-Web
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Bytespider
+Allow: /

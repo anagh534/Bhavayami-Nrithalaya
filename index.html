@@ -91,6 +91,75 @@
     }
     </script>
 
+    <!-- FAQ Schema for SEO Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the minimum age for admission at Bhavayami Nrithalaya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept children from age 3 onwards. For Bharatanatyam and classical forms, we recommend starting between ages 3-7 for optimal learning. Younger children can begin with basic rhythm and movement classes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where exactly is the dance academy located in Vazhuthacaud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We're located at Lenin Balavadi, Vazhuthacaud, Thiruvananthapuram – 695010. Easy access from Sasthamangalam, Kawdiar, Kowdiar, Pattom, and Medical College areas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the class timings and days?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer weekend batches on Saturday and Sunday for families who prefer weekend activities. We also have after-school batches on Tuesday and Thursday from 5:00 PM to 7:00 PM, ideal for school-going children."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my child need prior dance experience?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No prior experience is required! We have dedicated beginner batches where children learn from the basics. Our instructors are experienced in teaching absolute beginners and make the learning process fun and engaging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which dance forms do you teach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in Bharatanatyam (classical), Semi-Classical dance, Kerala Folk dances, Thiruvathira, and Nrithyayoga. We also provide specialized training for school competitions and Kalolsavam."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you prepare students for school competitions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We offer specialized coaching for Kalolsavam, school annual day performances, and inter-school competitions. Our students have won numerous prizes in various competitions across Trivandrum."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I enroll my child at Bhavayami Nrithalaya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can call us at +91 8921608810 or fill out the enquiry form on our website. We'll be happy to discuss your requirements, show you the facility, and help you choose the right batch for your child."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- LLM-readable file reference -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site information">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="assets/2.jpeg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,6 +167,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
+    <!-- Preload critical above-the-fold images -->
+    <link rel="preload" as="image" href="assets/bharatanatyam.jpeg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/semi-classical.jpg" fetchpriority="high">
 </head>
 
 <body>
@@ -155,7 +228,7 @@
                         Indian dance in the heart of Vazhuthacaud, Trivandrum.</p>
                     <p>Conveniently located at Lenin Balavadi, we make it easy for families in Vazhuthacaud,
                         Sasthamangalam, Kawdiar, and nearby areas to access quality dance education. Our passionate
-                        instructors create a nurturing environment where children aged 5 and above learn Bharatanatyam,
+                        instructors create a nurturing environment where children aged 3 and above learn Bharatanatyam,
                         Folk dance, and Semi-Classical forms at their own pace.</p>
                     <p>Whether you're looking for weekend classes or after-school activities to enrich your child's
                         routine, we offer flexible timings that fit busy family schedules. From the very first class to
@@ -195,28 +268,32 @@
                 <!-- Bharatanatyam -->
                 <div class="class-card" id="bharatanatyam">
                     <div class="class-image bharatanatyam-bg">
-                        <img src="assets/bharatanatyam.jpeg" alt="Bharatanatyam Dance" loading="lazy" decoding="async">
+                        <img src="assets/bharatanatyam.jpeg" alt="Bharatanatyam Dance" loading="eager"
+                            fetchpriority="high" decoding="async">
                     </div>
                     <div class="class-content">
                         <h3>Bharatanatyam Classes for Kids</h3>
                         <p class="class-category">Classical Dance for Children & Students</p>
                         <p class="class-description">Give your child a strong foundation in India's most ancient
                             classical dance form. Our Bharatanatyam classes combine traditional techniques with a
-                            child-friendly teaching approach. Perfect for children aged 5+, we offer weekend and
+                            child-friendly teaching approach. Perfect for children aged 3+, we offer weekend and
                             after-school batches that build grace, discipline, and cultural awareness.</p>
                         <ul class="class-features">
                             <li>Traditional training methods</li>
                             <li>Arangetram preparation</li>
                             <li>Theory and practical sessions</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="bharatanatyam" style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire Now</a>
+                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="bharatanatyam"
+                            style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire
+                            Now</a>
                     </div>
                 </div>
 
                 <!-- Semi-Classical -->
                 <div class="class-card" id="semi-classical">
                     <div class="class-image semiclassical-bg">
-                        <img src="assets/semi-classical.jpg" alt="Semi-Classical Dance" loading="lazy" decoding="async">
+                        <img src="assets/semi-classical.jpg" alt="Semi-Classical Dance" loading="eager"
+                            fetchpriority="high" decoding="async">
                     </div>
                     <div class="class-content">
                         <h3>Semi-Classical Dance for Students</h3>
@@ -230,14 +307,17 @@
                             <li>Cinematic dance styles</li>
                             <li>Expression training</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="semiclassical" style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire Now</a>
+                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="semiclassical"
+                            style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire
+                            Now</a>
                     </div>
                 </div>
 
                 <!-- Folk Dance -->
                 <div class="class-card" id="folk-dance">
                     <div class="class-image folk-bg">
-                        <img src="assets/folk-dance.jpg" alt="Folk Dance" loading="lazy" decoding="async">
+                        <img src="assets/folk-dance.jpg" alt="Folk Dance" loading="lazy" fetchpriority="low"
+                            decoding="async">
                     </div>
                     <div class="class-content">
                         <h3>Kerala Folk Dance for Children</h3>
@@ -251,14 +331,17 @@
                             <li>Cultural immersion</li>
                             <li>Group performances</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="folk" style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire Now</a>
+                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="folk"
+                            style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire
+                            Now</a>
                     </div>
                 </div>
 
                 <!-- Thiruvathira -->
                 <div class="class-card" id="thiruvathira">
                     <div class="class-image thiruvathira-bg">
-                        <img src="assets/thiruvathira.jpg" alt="Thiruvathira Dance" loading="lazy" decoding="async">
+                        <img src="assets/thiruvathira.jpg" alt="Thiruvathira Dance" loading="lazy" fetchpriority="low"
+                            decoding="async">
                     </div>
                     <div class="class-content">
                         <h3>Thiruvathira Classes</h3>
@@ -272,14 +355,17 @@
                             <li>Group coordination</li>
                             <li>Traditional songs</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="thiruvathira" style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire Now</a>
+                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="thiruvathira"
+                            style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire
+                            Now</a>
                     </div>
                 </div>
 
                 <!-- Nrithyayoga -->
                 <div class="class-card" id="nrithyayoga">
                     <div class="class-image nrithyayoga-bg">
-                        <img src="assets/Nrithyayoga.jpeg" alt="Nrithyayoga" loading="lazy" decoding="async">
+                        <img src="assets/Nrithyayoga.jpeg" alt="Nrithyayoga" loading="lazy" fetchpriority="low"
+                            decoding="async">
                     </div>
                     <div class="class-content">
                         <h3>Nrithyayoga</h3>
@@ -291,14 +377,17 @@
                             <li>Mindfulness practices</li>
                             <li>Flexibility training</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="nrithyayoga" style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire Now</a>
+                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="nrithyayoga"
+                            style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire
+                            Now</a>
                     </div>
                 </div>
 
                 <!-- Competition Items -->
                 <div class="class-card" id="competition">
                     <div class="class-image competition-bg">
-                        <img src="assets/competition.jpg" alt="Competition Training" loading="lazy" decoding="async">
+                        <img src="assets/competition.jpg" alt="Competition Training" loading="lazy" fetchpriority="low"
+                            decoding="async">
                     </div>
                     <div class="class-content">
                         <h3>School Competition Coaching</h3>
@@ -312,7 +401,9 @@
                             <li>Performance coaching</li>
                             <li>Stage presence training</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="competition" style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire Now</a>
+                        <a href="#contact" class="btn btn-primary class-enroll-btn" data-dance="competition"
+                            style="margin-top: 20px; display: inline-block; padding: 12px 30px; font-size: 0.95rem;">Enquire
+                            Now</a>
                     </div>
                 </div>
             </div>
@@ -320,7 +411,8 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us" id="why-choose-us" style="background: linear-gradient(135deg, #fff5f7 0%, #fff 100%); padding: 80px 0;">
+    <section class="why-choose-us" id="why-choose-us"
+        style="background: linear-gradient(135deg, #fff5f7 0%, #fff 100%); padding: 80px 0;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Why Parents Choose Bhavayami Nrithalaya for Their Children</h2>
@@ -388,8 +480,8 @@
                     style="background: #fff5f7; padding: 25px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #D4145A;">
                     <h3 style="color: #D4145A; margin-bottom: 10px; font-size: 18px;">What is the minimum age for
                         admission?</h3>
-                    <p style="color: #666; line-height: 1.8;">We accept children from age 5 onwards. For Bharatanatyam
-                        and classical forms, we recommend starting between ages 5-7 for optimal learning. Younger
+                    <p style="color: #666; line-height: 1.8;">We accept children from age 3 onwards. For Bharatanatyam
+                        and classical forms, we recommend starting between ages 3-7 for optimal learning. Younger
                         children can begin with basic rhythm and movement classes.</p>
                 </div>
                 <div
@@ -452,7 +544,8 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox(0)">
-                    <img src="assets/1.jpeg" alt="Dance Performance 1" loading="lazy" decoding="async">
+                    <img src="assets/1.jpeg" alt="Dance Performance 1" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -465,7 +558,8 @@
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="assets/2.jpeg" alt="Dance Performance 2" loading="lazy" decoding="async">
+                    <img src="assets/2.jpeg" alt="Dance Performance 2" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -478,7 +572,8 @@
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="assets/3.jpeg" alt="Dance Performance 3" loading="lazy" decoding="async">
+                    <img src="assets/3.jpeg" alt="Dance Performance 3" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -491,7 +586,8 @@
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="assets/4.jpeg" alt="Dance Performance 4" loading="lazy" decoding="async">
+                    <img src="assets/4.jpeg" alt="Dance Performance 4" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -504,7 +600,8 @@
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(4)">
-                    <img src="assets/5.jpeg" alt="Dance Performance 5" loading="lazy" decoding="async">
+                    <img src="assets/5.jpeg" alt="Dance Performance 5" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -517,7 +614,8 @@
                     </div>
                 </div>
                 <div class="gallery-item" onclick="openLightbox(5)">
-                    <img src="assets/6.jpeg" alt="Dance Performance 6" loading="lazy" decoding="async">
+                    <img src="assets/6.jpeg" alt="Dance Performance 6" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -530,7 +628,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(6)">
-                    <img src="assets/7.jpeg" alt="Dance Performance 7" loading="lazy" decoding="async">
+                    <img src="assets/7.jpeg" alt="Dance Performance 7" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -543,7 +642,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(7)">
-                    <img src="assets/8.jpeg" alt="Dance Performance 8" loading="lazy" decoding="async">
+                    <img src="assets/8.jpeg" alt="Dance Performance 8" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -556,7 +656,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(8)">
-                    <img src="assets/9.jpeg" alt="Dance Performance 9" loading="lazy" decoding="async">
+                    <img src="assets/9.jpeg" alt="Dance Performance 9" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -569,7 +670,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(9)">
-                    <img src="assets/10.jpeg" alt="Dance Performance 10" loading="lazy" decoding="async">
+                    <img src="assets/10.jpeg" alt="Dance Performance 10" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -582,7 +684,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(10)">
-                    <img src="assets/11.jpeg" alt="Dance Performance 11" loading="lazy" decoding="async">
+                    <img src="assets/11.jpeg" alt="Dance Performance 11" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -595,7 +698,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(11)">
-                    <img src="assets/12.jpeg" alt="Dance Performance 12" loading="lazy" decoding="async">
+                    <img src="assets/12.jpeg" alt="Dance Performance 12" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -608,7 +712,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(12)">
-                    <img src="assets/13.jpeg" alt="Dance Performance 13" loading="lazy" decoding="async">
+                    <img src="assets/13.jpeg" alt="Dance Performance 13" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -621,7 +726,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(13)">
-                    <img src="assets/14.jpeg" alt="Dance Performance 14" loading="lazy" decoding="async">
+                    <img src="assets/14.jpeg" alt="Dance Performance 14" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -634,7 +740,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(14)">
-                    <img src="assets/15.jpeg" alt="Dance Performance 15" loading="lazy" decoding="async">
+                    <img src="assets/15.jpeg" alt="Dance Performance 15" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -647,7 +754,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(15)">
-                    <img src="assets/16.jpeg" alt="Dance Performance 16" loading="lazy" decoding="async">
+                    <img src="assets/16.jpeg" alt="Dance Performance 16" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -660,7 +768,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(16)">
-                    <img src="assets/17.jpeg" alt="Dance Performance 17" loading="lazy" decoding="async">
+                    <img src="assets/17.jpeg" alt="Dance Performance 17" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -673,7 +782,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(17)">
-                    <img src="assets/18.jpeg" alt="Dance Performance 18" loading="lazy" decoding="async">
+                    <img src="assets/18.jpeg" alt="Dance Performance 18" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -686,7 +796,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(18)">
-                    <img src="assets/19.jpeg" alt="Dance Performance 19" loading="lazy" decoding="async">
+                    <img src="assets/19.jpeg" alt="Dance Performance 19" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -699,7 +810,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(19)">
-                    <img src="assets/20.jpeg" alt="Dance Performance 20" loading="lazy" decoding="async">
+                    <img src="assets/20.jpeg" alt="Dance Performance 20" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -712,7 +824,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(20)">
-                    <img src="assets/21.jpeg" alt="Dance Performance 21" loading="lazy" decoding="async">
+                    <img src="assets/21.jpeg" alt="Dance Performance 21" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -725,7 +838,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(21)">
-                    <img src="assets/22.jpg" alt="Dance Performance 22" loading="lazy" decoding="async">
+                    <img src="assets/22.jpg" alt="Dance Performance 22" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -738,7 +852,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(22)">
-                    <img src="assets/23.jpeg" alt="Dance Performance 23" loading="lazy" decoding="async">
+                    <img src="assets/23.jpeg" alt="Dance Performance 23" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -751,7 +866,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(23)">
-                    <img src="assets/24.jpeg" alt="Dance Performance 24" loading="lazy" decoding="async">
+                    <img src="assets/24.jpeg" alt="Dance Performance 24" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -764,7 +880,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(24)">
-                    <img src="assets/25.jpeg" alt="Dance Performance 25" loading="lazy" decoding="async">
+                    <img src="assets/25.jpeg" alt="Dance Performance 25" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -777,7 +894,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(25)">
-                    <img src="assets/26.jpeg" alt="Dance Performance 26" loading="lazy" decoding="async">
+                    <img src="assets/26.jpeg" alt="Dance Performance 26" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -790,7 +908,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(26)">
-                    <img src="assets/27.jpeg" alt="Dance Performance 27" loading="lazy" decoding="async">
+                    <img src="assets/27.jpeg" alt="Dance Performance 27" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -803,7 +922,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(27)">
-                    <img src="assets/28.jpeg" alt="Dance Performance 28" loading="lazy" decoding="async">
+                    <img src="assets/28.jpeg" alt="Dance Performance 28" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -816,7 +936,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(28)">
-                    <img src="assets/29.jpeg" alt="Dance Performance 29" loading="lazy" decoding="async">
+                    <img src="assets/29.jpeg" alt="Dance Performance 29" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -829,7 +950,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(29)">
-                    <img src="assets/30.jpeg" alt="Dance Performance 30" loading="lazy" decoding="async">
+                    <img src="assets/30.jpeg" alt="Dance Performance 30" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -842,7 +964,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(30)">
-                    <img src="assets/31.jpeg" alt="Dance Performance 31" loading="lazy" decoding="async">
+                    <img src="assets/31.jpeg" alt="Dance Performance 31" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -855,7 +978,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(31)">
-                    <img src="assets/32.jpeg" alt="Dance Performance 32" loading="lazy" decoding="async">
+                    <img src="assets/32.jpeg" alt="Dance Performance 32" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -868,7 +992,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(32)">
-                    <img src="assets/33.jpeg" alt="Dance Performance 33" loading="lazy" decoding="async">
+                    <img src="assets/33.jpeg" alt="Dance Performance 33" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -881,7 +1006,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(33)">
-                    <img src="assets/34.jpeg" alt="Dance Performance 34" loading="lazy" decoding="async">
+                    <img src="assets/34.jpeg" alt="Dance Performance 34" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -894,7 +1020,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(34)">
-                    <img src="assets/35.jpeg" alt="Dance Performance 35" loading="lazy" decoding="async">
+                    <img src="assets/35.jpeg" alt="Dance Performance 35" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -907,7 +1034,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(35)">
-                    <img src="assets/36.jpeg" alt="Dance Performance 36" loading="lazy" decoding="async">
+                    <img src="assets/36.jpeg" alt="Dance Performance 36" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -920,7 +1048,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(36)">
-                    <img src="assets/37.jpeg" alt="Dance Performance 37" loading="lazy" decoding="async">
+                    <img src="assets/37.jpeg" alt="Dance Performance 37" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -933,7 +1062,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(37)">
-                    <img src="assets/38.jpeg" alt="Dance Performance 38" loading="lazy" decoding="async">
+                    <img src="assets/38.jpeg" alt="Dance Performance 38" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -946,7 +1076,8 @@
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-hidden" onclick="openLightbox(38)">
-                    <img src="assets/39.jpeg" alt="Dance Performance 39" loading="lazy" decoding="async">
+                    <img src="assets/39.jpeg" alt="Dance Performance 39" loading="lazy" fetchpriority="low"
+                        decoding="async">
                     <div class="gallery-overlay">
                         <div class="overlay-content">
                             <svg class="view-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"

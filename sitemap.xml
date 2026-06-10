@@ -1,10 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Only actual HTML pages currently in the site -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
   <url>
     <loc>https://www.bhavayami-nrithalaya.in/</loc>
-    <lastmod>2026-01-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.bhavayami-nrithalaya.in/assets/bharatanatyam.jpeg</image:loc>
+      <image:caption>Bharatanatyam Dance Classes for Kids at Bhavayami Nrithalaya</image:caption>
+      <image:title>Bharatanatyam Classes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavayami-nrithalaya.in/assets/semi-classical.jpg</image:loc>
+      <image:caption>Semi-Classical Dance Classes for Students</image:caption>
+      <image:title>Semi-Classical Dance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavayami-nrithalaya.in/assets/folk-dance.jpg</image:loc>
+      <image:caption>Kerala Folk Dance Classes for Children</image:caption>
+      <image:title>Folk Dance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavayami-nrithalaya.in/assets/thiruvathira.jpg</image:loc>
+      <image:caption>Thiruvathira Dance Classes</image:caption>
+      <image:title>Thiruvathira</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavayami-nrithalaya.in/assets/Nrithyayoga.jpeg</image:loc>
+      <image:caption>Nrithyayoga Dance and Wellness Classes</image:caption>
+      <image:title>Nrithyayoga</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavayami-nrithalaya.in/assets/competition.jpg</image:loc>
+      <image:caption>School Competition Coaching and Kalolsavam Training</image:caption>
+      <image:title>Competition Coaching</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bhavayami-nrithalaya.in/assets/2.jpeg</image:loc>
+      <image:caption>Dance Performance at Bhavayami Nrithalaya</image:caption>
+      <image:title>Dance Performance</image:title>
+    </image:image>
   </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#about</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Classes Section -->
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#classes</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Individual Class Pages -->
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#bharatanatyam</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#semi-classical</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#folk-dance</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#thiruvathira</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#nrithyayoga</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#competition</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Gallery Section -->
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#gallery</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Why Choose Us Section -->
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#why-choose-us</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FAQ Section -->
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#faq</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://www.bhavayami-nrithalaya.in/#contact</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
