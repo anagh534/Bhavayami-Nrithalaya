@@ -623,7 +623,25 @@ const galleryImages = [
     { src: 'assets/18.jpeg', caption: 'Dance Performance 18' },
     { src: 'assets/19.jpeg', caption: 'Dance Performance 19' },
     { src: 'assets/20.jpeg', caption: 'Dance Performance 20' },
-    { src: 'assets/21.jpeg', caption: 'Dance Performance 21' }
+    { src: 'assets/21.jpeg', caption: 'Dance Performance 21' },
+    { src: 'assets/22.jpg', caption: 'Dance Performance 22' },
+    { src: 'assets/23.jpeg', caption: 'Dance Performance 23' },
+    { src: 'assets/24.jpeg', caption: 'Dance Performance 24' },
+    { src: 'assets/25.jpeg', caption: 'Dance Performance 25' },
+    { src: 'assets/26.jpeg', caption: 'Dance Performance 26' },
+    { src: 'assets/27.jpeg', caption: 'Dance Performance 27' },
+    { src: 'assets/28.jpeg', caption: 'Dance Performance 28' },
+    { src: 'assets/29.jpeg', caption: 'Dance Performance 29' },
+    { src: 'assets/30.jpeg', caption: 'Dance Performance 30' },
+    { src: 'assets/31.jpeg', caption: 'Dance Performance 31' },
+    { src: 'assets/32.jpeg', caption: 'Dance Performance 32' },
+    { src: 'assets/33.jpeg', caption: 'Dance Performance 33' },
+    { src: 'assets/34.jpeg', caption: 'Dance Performance 34' },
+    { src: 'assets/35.jpeg', caption: 'Dance Performance 35' },
+    { src: 'assets/36.jpeg', caption: 'Dance Performance 36' },
+    { src: 'assets/37.jpeg', caption: 'Dance Performance 37' },
+    { src: 'assets/38.jpeg', caption: 'Dance Performance 38' },
+    { src: 'assets/39.jpeg', caption: 'Dance Performance 39' }
 ];
 
 let currentImageIndex = 0;
@@ -753,3 +771,16 @@ if (galleryToggleBtn) {
 
 console.log('✨ Bhavayami Nrithalaya website loaded successfully!');
 
+// ========================================
+// ENQUIRE NOW BUTTON - AUTO-SELECT DANCE FORM
+// ========================================
+document.querySelectorAll('.class-enroll-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const danceType = this.getAttribute('data-dance');
+        const selectElement = document.getElementById('dance-type');
+        if (selectElement && danceType) {
+            selectElement.value = danceType;
+            selectElement.style.borderColor = '#4CAF50';
+        }
+    });
+});
